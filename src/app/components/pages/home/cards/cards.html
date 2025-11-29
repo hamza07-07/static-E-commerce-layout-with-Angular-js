@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dark Perfume Cards</title>
+
+<style>
+
+/* DARK THEME */
+body {
+  margin: 0;
+  background: #0b0b0d;
+  color: #ffffff;
+  font-family: "Poppins", sans-serif;
+}
+
+h2 {
+  text-align: center;
+  margin: 30px 0;
+  font-weight: 700;
+}
+
+/* SEARCH BAR (STATIC) */
+.search-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 25px;
+}
+
+.search-box {
+  display: flex;
+  width: 50%;
+  min-width: 300px;
+}
+
+.search-box input {
+  flex: 1;
+  background: #1a1a1d;
+  border: 2px solid #2c2c33;
+  padding: 12px;
+  border-radius: 8px 0 0 8px;
+  color: #fff;
+}
+
+.search-box button {
+  background: #7a3cff;
+  border: none;
+  padding: 12px 20px;
+  color: white;
+  border-radius: 0 8px 8px 0;
+  cursor: pointer;
+}
+
+.search-box button:hover {
+  background: #9b63ff;
+}
+
+/* CARD GRID */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 22px;
+  width: 90%;
+  margin: auto;
+}
+
+/* CARD STYLING */
+.card {
+  background: #151518;
+  border: 2px solid #2a2a30;
+  border-radius: 14px;
+  overflow: hidden;
+  height: 480px; /* SAME HEIGHT */
+  display: flex;
+  flex-direction: column;
+  transition: 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 0 20px #7a3cff;
+}
+
+/* FIXED IMAGE HEIGHT */
+.card img {
+  height: 230px;
+  width: 100%;
+  object-fit: cover;
+  transition: 0.5s ease;
+}
+
+.card:hover img {
+  transform: scale(1.15);
+}
+
+/* CARD BODY FIXED HEIGHT */
+.card-body {
+  padding: 15px;
+  height: calc(480px - 230px);
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.card-body p {
+  flex-grow: 1;
+  color: #d1d1d1;
+}
+
+/* BUTTON */
+.card-btn {
+  background: #7a3cff;
+  border: none;
+  padding: 10px;
+  color: white;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: .25s ease;
+}
+
+.card-btn:hover {
+  background: #9b63ff;
+  transform: scale(1.05);
+}
+
+</style>
+</head>
+<body>
+
+<h2>Featured Perfumes</h2>
+
+<!-- SEARCH BAR (static only) -->
+<div class="search-wrapper">
+  <div class="search-box">
+    <input type="text" placeholder="Search perfumes... (static)">
+    <button>Search</button>
+  </div>
+</div>
+
+<!-- 6 STATIC CARDS -->
+<div class="grid">
+
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1611930022073-b7a4e7c3e2b3">
+    <div class="card-body">
+      <h3>Mystique Aroma</h3>
+      <p>Elegant and timeless fragrance.</p>
+      <button class="card-btn">Buy Now</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1542038784456-1ea8e935640e">
+    <div class="card-body">
+      <h3>Golden Essence</h3>
+      <p>Warm floral & woody blend.</p>
+      <button class="card-btn">Buy Now</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1594035910387-fea47794261b">
+    <div class="card-body">
+      <h3>Aqua Breeze</h3>
+      <p>Fresh oceanic tones for daily use.</p>
+      <button class="card-btn">Buy Now</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1620912189862-1a9f4ba49d83">
+    <div class="card-body">
+      <h3>Rose Amour</h3>
+      <p>A romantic rose and vanilla mix.</p>
+      <button class="card-btn">Buy Now</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1600180758890-6b94519c43a4">
+    <div class="card-body">
+      <h3>Noir Intense</h3>
+      <p>Dark, seductive, mysterious scent.</p>
+      <button class="card-btn">Buy Now</button>
+    </div>
+  </div>
+
+  <div class="card">
+    <img src="https://images.unsplash.com/photo-1600180758896-736f6f75f1a4">
+    <div class="card-body">
+      <h3>Citrus Bloom</h3>
+      <p>A fresh citrus burst for summer.</p>
+      <button class="card-btn">Buy Now</button>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
