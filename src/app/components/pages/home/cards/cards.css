@@ -1,0 +1,125 @@
+/* PAGE BASE */
+.dark-page {
+  background: #0b0b0d;
+  min-height: 100vh;
+  color: #fff;
+}
+
+/* ---------------- HEADING ANIMATION ---------------- */
+.animate-heading {
+  opacity: 0;
+  animation: headingDrop 1s ease forwards;
+}
+
+@keyframes headingDrop {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px) scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ---------------- SEARCH BAR ANIMATION ---------------- */
+.animate-search {
+  opacity: 0;
+  animation: searchFade 1s ease 0.4s forwards;
+}
+
+@keyframes searchFade {
+  0% {
+    opacity: 0;
+    transform: translateY(30px) scale(0.95);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* SEARCH INPUT */
+.search-input {
+  background: #1a1a1d;
+  border: 2px solid #2c2c33;
+  color: #fff;
+}
+
+.search-input:focus {
+  background: #1a1a1d;
+  color: #fff;
+  border-color: #ffc107;
+  box-shadow: 0 0 10px rgba(255, 193, 7, 0.5);
+}
+
+/* ---------------- CARD ENTRY ANIMATION ---------------- */
+.animate-card {
+  opacity: 0;
+  animation: cardRise 0.9s ease forwards;
+}
+
+@keyframes cardRise {
+  0% {
+    opacity: 0;
+    transform: translateY(50px) scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* CARD STYLING */
+.product-card {
+  background: #151518;
+  border: 2px solid #2a2a30;
+  border-radius: 16px;
+  overflow: hidden;
+  transition: all 0.4s ease;
+}
+
+/* HOVER */
+.product-card:hover {
+  transform: translateY(-12px) scale(1.03);
+  box-shadow: 0 0 30px rgba(255, 193, 7, 0.6);
+}
+
+/* IMAGE */
+.img-wrapper {
+  overflow: hidden;
+}
+
+.img-wrapper img {
+  height: 220px;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.product-card:hover img {
+  transform: scale(1.2) rotate(1deg);
+}
+
+/* BODY */
+.card-body {
+  padding: 20px;
+}
+
+.card-title {
+  font-weight: 600;
+}
+
+.price {
+  color: #ffc107;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* BUTTON */
+.product-card .btn {
+  transition: all 0.3s ease;
+}
+
+.product-card .btn:hover {
+  transform: scale(1.07);
+}

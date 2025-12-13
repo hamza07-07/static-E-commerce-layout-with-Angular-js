@@ -1,0 +1,50 @@
+<div class="container-fluid py-5 dark-page">
+
+    <!-- ANIMATED HEADING -->
+    <h2 class="text-center mb-4 title animate-heading">
+        <b><u>FEATURED PRODUCT</u></b>
+    </h2>
+
+    <!-- ANIMATED SEARCH BAR -->
+    <form>
+        <div class="row justify-content-center mb-5 animate-search">
+            <div class="col-12 col-md-8 col-lg-6">
+                <div class="input-group">
+                    <input type="text" class="form-control search-input" placeholder="Search any product"
+                        [(ngModel)]="searchText" name="search" />
+                    <button class="btn btn-warning text-dark search-btn">
+                        Search
+                    </button>
+                </div>
+            </div>
+        </div>
+    </form>
+
+    <!-- PRODUCT GRID -->
+    <div class="row g-4 px-lg-5">
+
+        <div class="col-12 col-sm-6 col-md-4 col-lg-3" *ngFor="let abc of filteredCards">
+
+            <div class="card product-card animate-card h-100">
+
+                <div class="img-wrapper">
+                    <img [src]="abc.image" class="card-img-top" alt="product">
+                </div>
+
+                <div class="card-body d-flex flex-column text-center">
+                    <h5 class="card-title text-truncate">{{ abc.title }}</h5>
+
+                    <p class="price">Rs. {{ abc.price }}</p>
+
+                    <!-- PUSH BUTTON DOWN -->
+                    <a class="btn btn-warning mt-auto w-100">
+                        Add to Cart
+                    </a>
+                </div>
+
+            </div>
+        </div>
+
+
+    </div>
+</div>
