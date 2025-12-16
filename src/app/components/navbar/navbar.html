@@ -8,22 +8,20 @@
   /* ===== NAVBAR STYLING ===== */
 
   .royal-navbar {
-    background: #0d0d0d; /* Dark luxury background */
+    background: #0d0d0d;
     padding: 12px 0;
-    border-bottom: 1px solid rgba(255, 215, 0, 0.25); /* Soft golden line */
+    border-bottom: 1px solid rgba(255, 215, 0, 0.25);
     position: sticky;
     top: 0;
     z-index: 9999;
     transition: all 0.4s ease;
   }
 
-  /* Shrink on scroll */
   .royal-navbar.scrolled {
     padding: 6px 0;
     background: #000000ee;
   }
 
-  /* Luxury Logo */
   .nav-logo {
     font-family: "Cinzel", serif;
     color: #f7d774;
@@ -37,7 +35,6 @@
     color: #ffec9d;
   }
 
-  /* Nav links */
   .nav-link {
     color: #e8e8e8 !important;
     font-size: 1rem;
@@ -51,7 +48,6 @@
     transform: translateY(-2px);
   }
 
-  /* Dropdown */
   .dropdown-menu {
     background: #111;
     border: 1px solid #f7d77433;
@@ -67,24 +63,6 @@
     color: #f7d774;
   }
 
-  /* Search input */
-  .search-bar {
-    border-radius: 25px;
-    border: 1px solid #555;
-    background: #1a1a1a;
-    color: #fff;
-    padding: 6px 14px;
-    width: 220px;
-    transition: 0.3s;
-  }
-
-  .search-bar:focus {
-    border-color: #f7d774;
-    box-shadow: 0 0 8px #f7d77455;
-    width: 260px;
-  }
-
-  /* Cart icon */
   .cart-btn {
     position: relative;
     color: #f7d774;
@@ -109,11 +87,60 @@
     font-weight: bold;
   }
 
-  /* Mobile adjustments */
+  /* ===== LOGIN / SIGNUP BUTTONS ===== */
+
+  .royal-btn {
+    position: relative;
+    padding: 6px 18px;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    font-weight: 500;
+    text-decoration: none;
+    overflow: hidden;
+    transition: 0.4s ease;
+  }
+
+  .royal-btn.login {
+    border: 1px solid #f7d774;
+    color: #f7d774;
+    background: transparent;
+  }
+
+  .royal-btn.signup {
+    background: linear-gradient(135deg, #f7d774, #ffec9d);
+    color: #000;
+    border: none;
+  }
+
+  .royal-btn::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      120deg,
+      transparent,
+      rgba(255, 255, 255, 0.4),
+      transparent
+    );
+    transition: 0.5s;
+  }
+
+  .royal-btn:hover::before {
+    left: 100%;
+  }
+
+  .royal-btn:hover {
+    box-shadow: 0 0 12px #f7d77499;
+    transform: translateY(-2px);
+  }
+
   @media (max-width: 992px) {
-    .search-bar {
+    .royal-btn {
       width: 100%;
-      margin-top: 10px;
+      text-align: center;
     }
   }
 </style>
@@ -139,24 +166,16 @@
     <div class="collapse navbar-collapse" id="royalNavbar">
       <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
 
-        <!-- Home -->
         <li class="nav-item">
           <a class="nav-link" routerLink="">Home</a>
         </li>
 
-<!-- ========= -->
-    <!-- Home -->
         <li class="nav-item">
           <a class="nav-link" routerLink="/about-us">About</a>
         </li>
-<!-- ================= -->
-        <!-- Categories -->
+
         <li class="nav-item dropdown">
-          <a
-            class="nav-link dropdown-toggle"
-            href="#"
-            data-bs-toggle="dropdown"
-          >
+          <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">
             Categories
           </a>
           <ul class="dropdown-menu">
@@ -173,10 +192,14 @@
 
       </ul>
 
-      <!-- Right Side: Search + Cart -->
+      <!-- Right Side -->
       <div class="d-flex align-items-center gap-3">
-        <!-- Search -->
-        <!-- <input type="text" class="search-bar" placeholder="Search perfumes…" /> -->
+
+        <!-- Login -->
+        <a routerLink="/login" class="royal-btn login">Login</a>
+
+        <!-- Signup -->
+        <a routerLink="/signup" class="royal-btn signup">Sign Up</a>
 
         <!-- Cart -->
         <div class="cart-btn">
@@ -197,7 +220,6 @@
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 <script>
-  /* Shrinking navbar animation on scroll */
   window.addEventListener("scroll", () => {
     const nav = document.getElementById("mainNavbar");
     if (window.scrollY > 20) nav.classList.add("scrolled");
